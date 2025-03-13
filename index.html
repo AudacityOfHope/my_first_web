@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Journey - Psychedelic Safety Resource</title>
+    <style>
+        :root {
+            --primary: #6a4c93;
+            --secondary: #8ac4d0;
+            --accent: #f9c74f;
+            --light: #f8f9fa;
+            --dark: #343a40;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), #9d65c9);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        nav {
+            background-color: var(--dark);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        section {
+            padding: 3rem 0;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        
+        .card h3 {
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #583c7b;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            position: relative;
+            color: white;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .disclaimer {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .resources-list {
+            list-style: none;
+        }
+        
+        .resources-list li {
+            margin-bottom: 1rem;
+        }
+        
+        .resources-list a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .resources-list a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Safe Journey</h1>
+            <p>Evidence-based information for safer psychedelic experiences</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#safety">Safety Guidelines</a></li>
+            <li><a href="#substances">Substances</a></li>
+            <li><a href="#preparation">Preparation</a></li>
+            <li><a href="#integration">Integration</a></li>
+            <li><a href="#resources">Resources</a></li>
+        </ul>
+    </nav>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Navigate Psychedelics Safely</h1>
+            <p>Education, harm reduction, and evidence-based information to help you make informed decisions about psychedelic use.</p>
+            <a href="#safety" class="btn">Safety First</a>
+        </div>
+    </section>
+    
+    <div class="container">
+        <section id="about">
+            <div class="disclaimer">
+                <strong>Disclaimer:</strong> This website provides harm reduction information only. We do not encourage illegal activities. Always check the legal status of substances in your jurisdiction. The information provided is not a substitute for professional medical advice.
+            </div>
+            
+            <h2>About Safe Journey</h2>
+            <p>Safe Journey is dedicated to providing evidence-based information about psychedelics with a focus on harm reduction and safety. Our goal is to help reduce risks associated with psychedelic use through education and awareness.</p>
+            <p>While psychedelics can offer profound experiences and potential therapeutic benefits when used responsibly, they also carry risks that should be understood and respected.</p>
+        </section>
+        
+        <section id="safety">
+            <h2>Safety Guidelines</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Set & Setting</h3>
+                    <p>"Set" refers to your mindset, intentions, and emotional state. "Setting" is your physical environment and social context.</p>
+                    <p>Choose a comfortable, safe environment with trusted people. Avoid using psychedelics when in a negative emotional state or dealing with serious mental health issues.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Dosage</h3>
+                    <p>Start with low doses, especially if you're inexperienced. Different substances have different potency levels.</p>
+                    <p>Use a reliable scale for measurement when applicable. Remember that potency can vary significantly between batches.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Trip Sitter</h3>
+                    <p>Having a sober, experienced, and trusted person present can significantly increase safety.</p>
+                    <p>A good trip sitter knows when to help and when to give space, and understands how to handle difficult experiences.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Drug Interactions</h3>
+                    <p>Psychedelics can interact dangerously with many medications and other substances.</p>
+                    <p>Research potential interactions before combining substances. Particularly dangerous combinations include MAOIs, lithium, and stimulants.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Medical Considerations</h3>
+                    <p>Certain medical and psychological conditions may increase risks.</p>
+                    <p>Those with personal or family history of psychosis, schizophrenia, bipolar disorder, or heart conditions should exercise extreme caution or abstain.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Testing</h3>
+                    <p>Always test substances using reagent test kits to verify their identity.</p>
+                    <p>This is especially important with substances obtained from unregulated sources.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="substances">
+            <h2>Common Psychedelic Substances</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Psilocybin Mushrooms</h3>
+                    <p><strong>Duration:</strong> 4-6 hours</p>
+                    <p><strong>Onset:</strong> 20-60 minutes</p>
+                    <p><strong>Safety considerations:</strong> Generally physiologically safe but can cause profound psychological experiences. Start with low doses (0.5-1g dried) for beginners.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>LSD</h3>
+                    <p><strong>Duration:</strong> 8-12 hours</p>
+                    <p><strong>Onset:</strong> 30-90 minutes</p>
+                    <p><strong>Safety considerations:</strong> Long duration requires proper time commitment. Test tabs as many substances are misrepresented as LSD. Start with low doses (50-75μg) for beginners.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>DMT</h3>
+                    <p><strong>Duration:</strong> 15-30 minutes (smoked)</p>
+                    <p><strong>Onset:</strong> Almost immediate</p>
+                    <p><strong>Safety considerations:</strong> Very intense but short-lasting experience. Having a sitter is essential. Proper vaporization technique is important.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>MDMA</h3>
+                    <p><strong>Duration:</strong> 3-5 hours</p>
+                    <p><strong>Onset:</strong> 30-60 minutes</p>
+                    <p><strong>Safety considerations:</strong> Test for purity. Stay hydrated but don't overhydrate. Avoid frequent use due to neurotoxicity concerns. Allow 2-3 months between experiences.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="preparation">
+            <h2>Preparation</h2>
+            <div class="card">
+                <h3>Before Your Experience</h3>
+                <p>Proper preparation can significantly improve safety and outcomes:</p>
+                <ul>
+                    <li>Research the substance thoroughly</li>
+                    <li>Set clear intentions for the experience</li>
+                    <li>Prepare your environment (clean space, comfortable seating, access to water)</li>
+                    <li>Create a playlist of appropriate music</li>
+                    <li>Have light, nutritious food available for after the experience</li>
+                    <li>Clear your schedule for the experience and the following day</li>
+                    <li>Consider having a journal ready for insights</li>
+                    <li>Inform your trip sitter about any personal concerns</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="integration">
+            <h2>Integration</h2>
+            <div class="card">
+                <h3>After Your Experience</h3>
+                <p>Integration is the process of making meaning from and incorporating insights from psychedelic experiences into daily life:</p>
+                <ul>
+                    <li>Journal about your experience</li>
+                    <li>Take time to reflect before making major life decisions</li>
+                    <li>Consider speaking with an integration specialist or therapist</li>
+                    <li>Join integration circles or community groups</li>
+                    <li>Implement small, sustainable changes based on insights</li>
+                    <li>Practice meditation or other mindfulness techniques</li>
+                    <li>Create art or other creative expressions of your experience</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="resources">
+            <h2>Additional Resources</h2>
+            <div class="card">
+                <h3>Harm Reduction Organizations</h3>
+                <ul class="resources-list">
+                    <li><a href="https://maps.org/" target="_blank">MAPS (Multidisciplinary Association for Psychedelic Studies)</a></li>
+                    <li><a href="https://dancesafe.org/" target="_blank">DanceSafe</a></li>
+                    <li><a href="https://zendoproject.org/" target="_blank">Zendo Project</a></li>
+                    <li><a href="https://psychedelicsociety.org.uk/" target="_blank">Psychedelic Society</a></li>
+                    <li><a href="https://tripsit.me/" target="_blank">TripSit</a></li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Educational Resources</h3>
+                <ul class="resources-list">
+                    <li><a href="https://erowid.org/" target="_blank">Erowid</a></li>
+                    <li><a href="https://psychonautwiki.org/" target="_blank">PsychonautWiki</a></li>
+                    <li><a href="https://www.bluelight.org/" target="_blank">Bluelight</a></li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Crisis Resources</h3>
+                <p>If you or someone you know is experiencing a difficult psychedelic experience:</p>
+                <ul class="resources-list">
+                    <li><a href="https://firesideproject.org/" target="_blank">Fireside Project Psychedelic Support Line: (623) 473-7433</a></li>
+                    <li>In case of medical emergency, call your local emergency number (911 in the US)</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Safe Journey - Promoting evidence-based harm reduction</p>
+            <p>This website is for educational purposes only. Always consult healthcare professionals.</p>
+            <p>&copy; 2023 Safe Journey. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
